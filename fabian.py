@@ -7,8 +7,6 @@ print("/////////////////////////////////////")
 #lista de inventario vacia
 inventario = []
 
-
-
 #funciones para añadir los productos
 def Añadir_productos(nombre, precio, cantidad):
     #Añade un nuevo producto al inventario.
@@ -16,7 +14,7 @@ def Añadir_productos(nombre, precio, cantidad):
         if producto["nombre"].lower() == nombre.lower():
             print("Error, el producto ya exite en el inventario")
             return
-        inventario.append({"nombre": nombre, "precio": precio, "cantidad": cantidad})
+    inventario.append({"nombre": nombre, "precio": precio, "cantidad": cantidad})
     print("Has añadido un producto!")
         
 #funcion para buscar productos
@@ -58,7 +56,7 @@ def validar_numero(mensaje, tipo=float):
             if valor < 0:
                 print("Error, el valor no debe ser negativo")
                 continue
-            break
+            return valor
         except ValueError:
             print(f"Error, debes ingresar un numero valido ({tipo.__name__})")
             
@@ -128,4 +126,5 @@ def main():
             
 #Ejecutar el programa
 if __name__ == "__main__":
+    
     main()    

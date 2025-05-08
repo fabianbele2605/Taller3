@@ -1,13 +1,13 @@
 #Presentacion
 print("/////////////////////////////////////")
-print("           Tienda Noah               ")
+print("           Tienda Ara               ")
 print("/////////////////////////////////////")
 
 #Ingreso de credenciales de la tienda
-#El usuario: Riwi----- Contraseña es: Riwi123
+#El usuario: Ara----- Contraseña es: Ara123
 tiendaCorrecto = ""
-tiendaUsuario = "Riwi"
-contraseñaCorrecta = "Riwi123"
+tiendaUsuario = "Ara"
+contraseñaCorrecta = "Ara123"
 contraseñaTienda = ""
 
 while tiendaCorrecto != tiendaUsuario:
@@ -61,6 +61,12 @@ def eliminar_productos(nombre):
             return
     print("Error, producto no encontrado")
     
+#funcion para mostrar el inventario
+'''def productos_inventario(inventario):
+    for producto_inventarios in inventario:
+        if producto_inventarios
+   '''
+    
 #Funcion lambda para calcular el valor total
 
 calcular_valor_total = lambda: sum(p["precio"] * p["cantidad"] for p in inventario)
@@ -82,13 +88,14 @@ def validar_numero(mensaje, tipo=float):
 def main():
     #funcion para interactuar con el menu
     while True:
-        print("\n--  Gestion de inventario---")
-        print("1. Añadir nuevos productos")
-        print("2. Buscar productos")
-        print("3. Actulizar precios")
-        print("4. Eliminar productos")
-        print("5. Valor total del inventario")
-        print("6. Salir")
+        print("\n--  Menu de inventario---")
+        print("1. Añadir nuevos productos 🛒")
+        print("2. Buscar productos 🔎")
+        print("3. Actulizar precios💸")
+        print("4. Eliminar productos🆑🛒")
+        print("5. Mostrar inventario📦")
+        print("6. Valor total del inventario💵")
+        print("7. Salir ⏻")
         
         opcion = input("Selecciona una opcion (1-6): ")
         
@@ -112,7 +119,7 @@ def main():
             if productos:
                 print(f"\nDatos del producto:")
                 print(f"nombre: {productos["nombre"]}")
-                print(f"precio: {productos["precio"]}")
+                print(f"precio: ${productos["precio"]:.2f}")
                 print(f"cantidad: {productos["cantidad"]}")
             else:
                 print("Producto no encontrado en el inventario")
@@ -133,10 +140,13 @@ def main():
             eliminar_productos(nombre)
             
         if opcion == "5":
+            print(f"Este es tu inventario {inventario}")
+            
+        if opcion == "6":
             total = calcular_valor_total()
             print(f"\nValor total del inventario: ${total:.2f}")
             
-        elif opcion == "6":
+        elif opcion == "7":
             print("\nExit...")
             break
         else:

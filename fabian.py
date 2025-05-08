@@ -3,6 +3,25 @@ print("/////////////////////////////////////")
 print("           Tienda Noah               ")
 print("/////////////////////////////////////")
 
+#Ingreso de credenciales de la tienda
+#El usuario: Riwi----- Contraseña es: Riwi123
+tiendaCorrecto = ""
+tiendaUsuario = "Riwi"
+contraseñaCorrecta = "Riwi123"
+contraseñaTienda = ""
+
+while tiendaCorrecto != tiendaUsuario:
+    tiendaCorrecto = str(input("Ingresa el usuario de la tienda=> "))
+else:
+    print("Usuario correcto!")
+    print()
+    
+while contraseñaTienda != contraseñaCorrecta:
+    contraseñaTienda = str(input("Ingresa contraseña de la tienda=> "))
+else:
+    print("Contraseña correcta! ")
+print("Bienvenido a Tiendas Riwi!")
+
 
 #lista de inventario vacia
 inventario = []
@@ -22,7 +41,6 @@ def Busca_productos(nombre):
     for producto in inventario:
         if producto["nombre"].lower()  == nombre.lower():
             return producto
-        return None
     
     
 #funcion para actulializar lista
@@ -126,5 +144,4 @@ def main():
             
 #Ejecutar el programa
 if __name__ == "__main__":
-    
     main()    
